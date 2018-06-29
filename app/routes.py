@@ -19,17 +19,12 @@ def hackernews_title():
         soup = BeautifulSoup(cards, 'lxml')
         trs = soup.find_all('tr', class_='athing')
         title = soup.find_all('a', class_='storylink')
-        source = soup.find_all('span', class_='sitestr')
         news = []
         for i, item in enumerate(trs):
             obj = {}
-            try:
-                obj['title'] = title[i].text.strip()
-                obj['source'] = source[i].text.strip()
-                news.append(obj)
-            except IndexError:
-                news.append(obj)
+            obj['title'] = title[i].text.strip()
+            news.append(obj)
         result = news
         return jsonify({"Hackernews Titles": result})
     else:
-        return "NOT ALLOWED"
+        return "NOT ALLOWED TO SCRAPE"
