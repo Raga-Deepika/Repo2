@@ -2,8 +2,6 @@ from app import app
 from flask import jsonify
 import requests
 from bs4 import BeautifulSoup
-import pprint
-pp = pprint.PrettyPrinter(indent=4)
 
 
 @app.route('/')
