@@ -27,4 +27,4 @@ def hackernews_title():
         result = news
         return jsonify({"Hackernews Titles": result})
     else:
-        return "NOT ALLOWED TO SCRAPE"
+        return "NOT ALLOWED"
